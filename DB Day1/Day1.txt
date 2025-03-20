@@ -1,0 +1,99 @@
+# mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 9
+Server version: 10.4.32-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> SHOW databases;
++--------------------+
+| Database           |
++--------------------+
+| bookboat           |
+| bookdb             |
+| bookstore          |
+| company            |
+| company2           |
+| englishfi          |
+| hospital           |
+| icae02             |
+| information_schema |
+| inventory          |
+| it1223db           |
+| library            |
+| librarysystem      |
+| moviedb            |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| retailstore        |
+| spjbase            |
+| sscmsdb            |
+| student            |
+| studentdb          |
+| studentdb1         |
+| test               |
++--------------------+
+24 rows in set (0.047 sec)
+MariaDB [(none)]> SHOW databases;
++--------------------+
+| Database           |
++--------------------+
+| bookboat           |
+| bookdb             |
+| bookstore          |
+| company            |
+| company2           |
+| englishfi          |
+| hospital           |
+| icae02             |
+| information_schema |
+| inventory          |
+| it1223db           |
+| library            |
+| librarysystem      |
+| moviedb            |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| retailstore        |
+| spjbase            |
+| sscmsdb            |
+| student            |
+| studentdb          |
+| studentdb1         |
+| test               |
+| uov                |
++--------------------+
+25 rows in set (0.001 sec)
+MariaDB [UOV]> DESC students;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| std_id | varchar(15) | YES  |     | NULL    |       |
+| name   | varchar(30) | YES  |     | NULL    |       |
+| course | varchar(35) | YES  |     | NULL    |       |
+| Dob    | date        | YES  |     | NULL    |       |
+| city   | varchar(35) | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+5 rows in set (0.013 sec)
+MariaDB [UOV]> select * from students;.
++-------------+--------+--------+------------+----------+
+| std_id      | name   | course | Dob        | city     |
++-------------+--------+--------+------------+----------+
+| 2022/ASP/01 | Saran  | AMC    | 0000-00-00 | Ampara   |
+| 2022/ASP/01 | Saran  | AMC    | 2001-10-29 | Ampara   |
+| 2022/ASP/01 | Saran  | AMC    | 2001-10-29 | Ampara   |
+| 2022/ASP/02 | Kabil  | AMC    | 2002-11-29 | Vavuniya |
+| 2022/ICT/17 | Kajee  | ICT    | 2003-03-13 | Jaffna   |
+| 2022/ICT/66 | Vejith | ICT    | 2003-04-16 | Jaffna   |
++-------------+--------+--------+------------+----------+
+6 rows in set (0.000 sec)
+
+
+
+conclusion: We study how to use the database 
+how to create table 
