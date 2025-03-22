@@ -97,3 +97,44 @@ MariaDB [UOV]> select * from students;.
 
 conclusion: We study how to use the database 
 how to create table 
+MariaDB [uov]> create table Employee(PhysicianID int,name varchar(20),Position varchar(20));
+Query OK, 0 rows affected (0.012 sec)
+
+MariaDB [uov]> insert into employee values('1','John Dorian','Staff Internist');
+Query OK, 1 row affected (0.040 sec)
+
+MariaDB [uov]> insert into employee values("2","Elliot Reid","Attending Physician");
+Query OK, 1 row affected (0.030 sec)
+
+MariaDB [uov]> insert into employee values('3','Christophar turk','Surgical Attending physician');
+Query OK, 1 row affected, 1 warning (0.004 sec)
+
+MariaDB [uov]> insert into employee values('4','Percival Cox','Senior Attending physician');
+Query OK, 1 row affected, 1 warning (0.004 sec)
+
+MariaDB [uov]> insert into employee values('5','Keith Dudemeister','MD Resident');
+Query OK, 1 row affected (0.004 sec)
+
+MariaDB [uov]> insert into employee values('6','Molly Clock','Attending Phychiatrist');
+Query OK, 1 row affected, 1 warning (0.004 sec)
+
+MariaDB [uov]> select * from employee;
++-------------+-------------------+----------------------+
+| PhysicianID | name              | Position             |
++-------------+-------------------+----------------------+
+|           1 | John Dorian       | Staff Internist      |
+|           2 | Elliot Reid       | Attending Physician  |
+|           3 | Christophar turk  | Surgical Attending p |
+|           4 | Percival Cox      | Senior Attending phy |
+|           5 | Keith Dudemeister | MD Resident          |
+|           6 | Molly Clock       | Attending Phychiatri |
++-------------+-------------------+----------------------+
+6 rows in set (0.000 sec)
+
+MariaDB [uov]>
+
+
+concusion:- 01.I have learned syntx and data type in sql,and also i have learned consept of how it works.
+            02.I learned how to create database.
+            03.I learned how to create tables,and insert the values.
+            04.I learned how to give multiple attribute valuse.
