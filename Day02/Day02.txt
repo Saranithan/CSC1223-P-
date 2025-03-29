@@ -1,0 +1,231 @@
+Setting environment for using XAMPP for Windows.
+My Lap@DESKTOP-KC7EPLE d:\xampp
+# mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 8
+Server version: 10.4.32-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| library            |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| student            |
+| test               |
+| uov                |
++--------------------+
+8 rows in set (0.004 sec)
+
+MariaDB [(none)]> create database hospital;
+Query OK, 1 row affected (0.025 sec)
+
+MariaDB [(none)]> use hospital;
+Database changed
+MariaDB [hospital]> create table patient(patientId int(5) primary key,Name varchar(20),Address varchar(30),phone varchar(20));
+Query OK, 0 rows affected (0.213 sec)
+
+MariaDB [hospital]> desc patient;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| patientId | int(5)      | NO   | PRI | NULL    |       |
+| Name      | varchar(20) | YES  |     | NULL    |       |
+| Address   | varchar(30) | YES  |     | NULL    |       |
+| phone     | varchar(20) | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+4 rows in set (0.103 sec)
+
+MariaDB [hospital]> show tables;
++--------------------+
+| Tables_in_hospital |
++--------------------+
+| patient            |
++--------------------+
+1 row in set (0.001 sec)
+
+MariaDB [hospital]> INSERT INTO patient(PatientID,Name,Address,Phone) VALUES
+    -> ('100000001','John Smith','42 Foobar Lane','555-0256'),
+    -> ('100000002','Grace Ritchie','37 Snafu Drive','555-0512'),
+    -> ('100000003','Todd Quinlon','101 Omgbbq Street','555-1204'),
+    -> ('100000004','Dennis Doe','1100 Foobaz Avenue','555-2048');
+Query OK, 4 rows affected (0.095 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+MariaDB [hospital]> select * from patient;
++-----------+---------------+--------------------+----------+
+| patientId | Name          | Address            | phone    |
++-----------+---------------+--------------------+----------+
+| 100000001 | John Smith    | 42 Foobar Lane     | 555-0256 |
+| 100000002 | Grace Ritchie | 37 Snafu Drive     | 555-0512 |
+| 100000003 | Todd Quinlon  | 101 Omgbbq Street  | 555-1204 |
+| 100000004 | Dennis Doe    | 1100 Foobaz Avenue | 555-2048 |
++-----------+---------------+--------------------+----------+
+4 rows in set (0.001 sec)
+
+MariaDB [hospital]> create table d1(id smallint primary key,name varchar(10));
+Query OK, 0 rows affected (0.507 sec)
+MariaDB [hospital]> create table d2(indexnumber Bigint primary key,address varchar(10));
+Query OK, 0 rows affected (0.258 sec)
+
+MariaDB [hospital]> show tables;
++--------------------+
+| Tables_in_hospital |
++--------------------+
+| d1                 |
+| d2                 |
+| patient            |
++--------------------+
+3 rows in set (0.002 sec)
+
+MariaDB [hospital]> insert into d1 values(5,'ramash'),(6,'Surash');
+Query OK, 2 rows affected (0.082 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+MariaDB [hospital]> insert into d2 values(51245,'10 ab road'),(457898,'11 cd road');
+Query OK, 2 rows affected (0.050 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+MariaDB [hospital]> select * from d1;
++----+--------+
+| id | name   |
++----+--------+
+|  5 | ramash |
+|  6 | Surash |
++----+--------+
+2 rows in set (0.001 sec)
+
+MariaDB [hospital]> select * from d2;
++-------------+------------+
+| indexnumber | address    |
++-------------+------------+
+|       51245 | 10 ab road |
+|      457898 | 11 cd road |
++-------------+------------+
+2 rows in set (0.001 sec)
+
+MariaDB [hospital]> delete from d1;
+Query OK, 2 rows affected (0.089 sec)
+
+MariaDB [hospital]> truncate table d2;
+Query OK, 0 rows affected (0.528 sec)
+
+MariaDB [hospital]> select * from d1;
+Empty set (0.001 sec)
+
+MariaDB [hospital]> select * from d2;
+Empty set (0.001 sec)
+
+MariaDB [hospital]> drop table d1;
+Query OK, 0 rows affected (0.434 sec)
+
+MariaDB [hospital]> drop table d2;
+Query OK, 0 rows affected (0.179 sec)
+
+MariaDB [hospital]> show tables;
++--------------------+
+| Tables_in_hospital |
++--------------------+
+| patient            |
++--------------------+
+1 row in set (0.001 sec)
+
+MariaDB [hospital]> create database toys;
+Query OK, 1 row affected (0.004 sec)
+
+MariaDB [hospital]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| hospital           |
+| information_schema |
+| library            |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| student            |
+| test               |
+| toys               |
+| uov                |
++--------------------+
+10 rows in set (0.002 sec)
+
+MariaDB [hospital]> drop database toys;
+Query OK, 0 rows affected (0.042 sec)
+
+MariaDB [hospital]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| hospital           |
+| information_schema |
+| library            |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| student            |
+| test               |
+| uov                |
++--------------------+
+9 rows in set (0.002 sec)
+
+MariaDB [hospital]> create table person(id int primary key,name varchar(20),age int,grade char(1),city varchar(20));
+Query OK, 0 rows affected (0.246 sec)
+
+MariaDB [hospital]> show tables;
++--------------------+
+| Tables_in_hospital |
++--------------------+
+| patient            |
+| person             |
++--------------------+
+2 rows in set (0.003 sec)
+
+MariaDB [hospital]> desc person;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int(11)     | NO   | PRI | NULL    |       |
+| name  | varchar(20) | YES  |     | NULL    |       |
+| age   | int(11)     | YES  |     | NULL    |       |
+| grade | char(1)     | YES  |     | NULL    |       |
+| city  | varchar(20) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+5 rows in set (0.010 sec)
+
+MariaDB [hospital]> LOAD DATA LOCAL INFILE 'D:/New folder (2)/document.CSV'
+    -> INTO TABLE person
+    -> FIELDS TERMINATED BY ','
+    -> LINES TERMINATED BY '\n'
+    -> (id,name,age,grade,city);
+Query OK, 7 rows affected, 5 warnings (0.143 sec)
+Records: 7  Deleted: 0  Skipped: 0  Warnings: 5
+
+MariaDB [hospital]> select * from person;
++----+-------+------+-------+-------------+
+| id | name  | age  | grade | city        |
++----+-------+------+-------+-------------+
+|  0 | NULL  | NULL | NULL  | NULL        |
+      |saran  |   12 | A     | batti
+      |kajee |   13 | A     | kandy
+    || ravi  |   45 | A     | colombo
+     | lskshan  |   26 | A     | trinco
+     | fizoor |   34 | B     | ampara
+ | 6 | keru |   24 | C     | kurunakala
++----+-------+------+-------+-------------+
+7 rows in set (0.068 sec)
+
+conclusion:-01.i have learned how to give primary key.
+            02.i have learned how to load .csv file in mysql.
+            03.i have learned how to delete table contants.
+            04.i have learned how to delete table and database.
+
+
